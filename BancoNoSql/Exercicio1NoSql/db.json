@@ -1,0 +1,16 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "produto": "leite",
+      "descricao": "desnatado",
+      "preco": 8
+    },
+    {
+      "id": "2",
+      "produto": "arroz",
+      "desricao": "integral",
+      "preco": 30
+    }
+  ]
+}
