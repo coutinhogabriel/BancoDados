@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Pedidos(
     ID_Clientes INT NOT NULL,
     -- REFERENCIAR ID DA TABELA CLIENTES 
     FOREIGN KEY (ID_Clientes) REFERENCES CLIENTES (ID),
-    DATA_PEDIDO VARCHAR (30) NOT NULL,
+    DATA_PEDIDO DATE,
     TOTAL DECIMAL (10,2) NOT NULL
 );
 
@@ -77,3 +77,9 @@ SELECT *FROM Pedidos;
 -- ATUALIZAR DADO DA COLUNA TOTAL
 UPDATE Pedidos SET TOTAL = 137.38
 WHERE ID = 4;
+
+-- Listar o nome do cliente, a data do pedido e o total de cada pedido feito nos últimos 30 dias
+SELECT c.Nome, p.Data_Pedido, p.Total
+FROM Clientes c
+JOIN Pedidos p ON c.ID = p.ID_Clientes
+WHERE p.Data_Pedido >= CURRENT_DATE -300;
