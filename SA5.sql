@@ -155,3 +155,35 @@ INSERT INTO Funcionarios (ID, Nome, Sobrenome, Cargo) VALUES
 ('3', 'Leonildo', 'Mark', 'Atendente'),
 ('4', 'Leonel', 'Love', 'Atendente'),
 ('5', 'Maike', 'Zequinha', 'Atendente');
+
+-- 7 Registrar algumas vendas
+INSERT INTO Vendas (ID, ID_Produto, ID_Cliente, Data_Venda, Quantidade) VALUES
+('1', '10', '3', '2024-04-10', '5'),
+('2', '5', '4', '2024-03-30','2'),
+('3', '3', '1', '2024-04-5','1'),
+('4', '12', '2', '2024-01-30','3'),
+('5', '7', '5', '2024-02-29','4');
+
+-- 8 Atualizar preço especifico 
+UPDATE Produtos SET Preco = 60.00 WHERE ID = 10;
+
+-- 9 Atualiza cargo de um funcionario
+UPDATE Funcionarios SET Cargo = 'Atendente' WHERE ID = 3;
+
+-- 10 Exclua um cliente
+DELETE FROM Vendas WHERE ID_Cliente = 3;
+DELETE FROM Pedidos WHERE ID_Cliente = 3;
+DELETE FROM clientes WHERE ID = 3;
+
+-- 11 Exclua um produto da tabela e seus registros
+DELETE FROM Produtos WHERE ID = 4;
+DELETE FROM Pedidos_Produtos WHERE ID_Produto = 4;
+
+-- 12 
+DELETE FROM Funcionarios WHERE ID = 5;
+
+-- 14
+UPDATE Pedidos SET Status = 'Em andamento' WHERE ID = 8;
+
+-- 15
+SELECT * FROM Pedidos WHERE Status ='Em andamento';
