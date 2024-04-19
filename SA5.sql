@@ -179,11 +179,11 @@ DELETE FROM clientes WHERE ID = 3;
 DELETE FROM Produtos WHERE ID = 4;
 DELETE FROM Pedidos_Produtos WHERE ID_Produto = 4;
 
--- 12 
+-- 12 Exclua um funcionario
 DELETE FROM Funcionarios WHERE ID = 5;
 
--- 14
+-- 13 Seleciona todos pedidos "Em andamento"
 UPDATE Pedidos SET Status = 'Em andamento' WHERE ID = 8;
 
--- 15
+-- 14 Liste o nome do cliente
 SELECT * FROM Pedidos WHERE Status ='Em andamento';
